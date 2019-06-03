@@ -1,13 +1,15 @@
-function getAndPrintHTML () {
+
+  var requestOptions = {
+    host: 'sytantris.github.io',
+    path: '/http-examples/step3.html'
+  };
+
+
+function getAndPrintHTML (options) {
 
     var https = require('https'); 
-
-    var requestOptions = {
-      host: 'sytantris.github.io',
-      path: '/http-examples/step2.html'
-    };
     
-    https.get(requestOptions, function (response) {
+    https.get(options, function (response) {
         let buffer = ''; // what other data type can I use???
 
         // set encoding of received data to UTF-8
@@ -27,4 +29,4 @@ function getAndPrintHTML () {
       
 }
 
-getAndPrintHTML();
+getAndPrintHTML(requestOptions);
